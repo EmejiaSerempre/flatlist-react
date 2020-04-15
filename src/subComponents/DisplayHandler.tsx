@@ -50,7 +50,7 @@ const defaultProps = {
 };
 
 class DisplayHandler extends Component<DisplayHandlerProps, State> {
-    childSpanRef = createRef<HTMLSpanElement>();
+    childSpanRef = createRef<HTMLDivElement>();
 
     state: State = {
         parentComponent: null
@@ -162,7 +162,7 @@ class DisplayHandler extends Component<DisplayHandlerProps, State> {
             <>
                 {/* following span is only used here to get the parent of this items since they are wrapped */}
                 {/* in fragment which is not rendered on the dom  */}
-                {!parentComponent && <span ref={this.childSpanRef} style={{display: 'none'}} />}
+                {!parentComponent && <div ref={this.childSpanRef} style={{display: 'none'}} />}
             </>
         );
     }
